@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextEditorV1.0</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="first-step">
+            <div class="top">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, accusamus!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, accusamus!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, accusamus!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, accusamus!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, accusamus!</p>
+            </div>
+            <div class="buttons">
+                <div>
+                    <button type="button" class="yellowBtn" onclick="editBtn()">edit</button>
+                    <button type="button" class="blueBtn" onclick="styleBtn()">style</button>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="edit-block hidden">
+                    <form>
+                        <textarea class="area" cols="30" rows="10"></textarea>
+                        <button type="button" class="redBtn" onclick="addBtn()">add</button>
+                        <button type="button" class="greenBtn" onclick="saveBtn()">save</button>
+                    </form>
+                </div>
+                <div class="style-block hidden">
+                    <form class="form-size">
+                        <h2>Font Size:</h2>
+                        <div>
+                            <div class="radio-wrapper">
+                                <input type="radio" name="size" value="12px" id="size12" onclick="fontSize()">
+                                <label for="size12" class="radioMark">
+                                    <h4>12px</h4>
+                                </label>
+                            </div>
+                            <div class="radio-wrapper">
+                                <input type="radio" name="size" value="14px" id="size14" onclick="fontSize()">
+                                <label for="size14" class="radioMark">
+                                    <h4>14px</h4>
+                                </label>
+                            </div>
+                            <div class="radio-wrapper">
+                                <input type="radio" name="size" value="16px" id="size16" onclick="fontSize()" checked>
+                                <label for="size16" class="radioMark">
+                                    <h4>16px</h4>
+                                </label>
+                            </div>
+                            <div class="radio-wrapper">
+                                <input type="radio" name="size" value="18px" id="size18" onclick="fontSize()">
+                                <label for="size18" class="radioMark">
+                                    <h4>18px</h4>
+                                </label>
+                            </div>
+                            <div class="radio-wrapper">
+                                <input type="radio" name="size" value="20px" id="size20" onclick="fontSize()">
+                                <label for="size20" class="radioMark">
+                                    <h4>20px</h4>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="customselect">
+                        <h2>Font Family:</h2>
+                        <input class="changeFont" type="text" placeholder="Choose option" readonly>
+                        <ul class="fonts">
+                            <li class="cursive" onmousedown="selectFont()">cursive</li>
+                            <li class="fantasy" onmousedown="selectFont()">fantasy</li>
+                            <li class="monospace" onmousedown="selectFont()">monospace</li>
+                            <li class="sans-serif" onmousedown="selectFont()">sans-serif</li>
+                        </ul>
+                    </div>
+                    <form name="form-colors">
+                        <h2>Colors:</h2>
+                        <button type="button" class="textColor grayBtn" name="text color" onclick="boxColor()">Color of
+                            text</button>
+                        <button type="button" class="backColor grayBtn" name="back color"
+                            onclick="boxColor()">Background
+                            color</button>
+                    </form>
+                    <form name="form-style">
+                        <h2>Style:</h2>
+                        <div class="checkboxs">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" name="weight" id="checkWeight" onclick="fontWeight()">
+                                <label for="checkWeight" class="checkbox">
+                                    <h3>Bold text</h3>
+                                </label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" name="style" id="checkStyle" onclick="fontStyle()">
+                                <label for="checkStyle" class="checkbox">
+                                    <h3>Italic text</h3>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="second-step hidden">
+            <div class="SecondStepTopBlock">
+                <h1>Choose what you want:</h1>
+                <label onclick="reset()">
+                    <h3>Back</h3>
+                </label>
+            </div>
+            <form class="form-create">
+                <div class="radio-wrapper">
+                    <input type="radio" name="radioForm" value="table" id="formTable">
+                    <label for="formTable" class="radioMark" onclick="checkedTable()">
+                        <h4>table</h4>
+                    </label>
+                </div>
+                <div class="radio-wrapper">
+                    <input type="radio" name="radioForm" value="list" id="formList">
+                    <label for="formList" class="radioMark" onclick="checkedList()">
+                        <h4>list</h4>
+                    </label>
+                </div>
+            </form>
+            <div class="table-box hidden">
+                <form name="form-create-table">
+                    <div class="create-table-tr">
+                        <h4>Count TR:</h4>
+                        <input type="text" name="tr" class="countTr" placeholder="Count TR:">
+                    </div>
+                    <div class="create-table-td">
+                        <h4>Count TD:</h4>
+                        <input type="text" name="td" class="countTd" placeholder="Count TD:">
+                    </div>
+                    <h3 class="style-table">Add style to your table:</h3>
+                    <div class="table-width-td">
+                        <h4>Width of TD:</h4>
+                        <input type="text" name="td" class="widthTd" placeholder="Width of TD:">
+                    </div>
+                    <div class="table-height-td">
+                        <h4>Height of TD:</h4>
+                        <input type="text" name="td" class="heightTd" placeholder="Height of TD:">
+                    </div>
+                    <div class="table-border-set">
+                        <div class="table-border-width">
+                            <h4>Width of border:</h4>
+                            <input type="text" name="width border" class="borderWidth" placeholder="Width:">
+                        </div>
+                        <div class="customselect">
+                            <h4>Type of border:</h4>
+                            <input class="changeBorderStyle" value="solid" type="text" placeholder="Choose option"
+                                readonly>
+                            <ul class="borderStyle">
+                                <li onmousedown="selectValue()">hidden</li>
+                                <li onmousedown="selectValue()">double</li>
+                                <li onmousedown="selectValue()">solid</li>
+                                <li onmousedown="selectValue()">dotted</li>
+                            </ul>
+                        </div>
+                        <div class="customselect">
+                            <h4>Color of border:</h4>
+                            <input class="changeBorderColor" value="black" type="text" placeholder="Choose option"
+                                readonly>
+                            <ul class="borderColors">
+                                <li onmousedown="selectValue()">black</li>
+                                <li onmousedown="selectValue()">red</li>
+                                <li onmousedown="selectValue()">blue</li>
+                                <li onmousedown="selectValue()">green</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <input type="button" class="buttonCreateTable" value="Create table" onclick="createTable()">
+                </form>
+            </div>
+            <div class="list-box hidden">
+                <div class="create-list-count">
+                    <h4>Count Li:</h4>
+                    <input type="text" name="count list" class="countLi" placeholder="Count TR:">
+                </div>
+                <div class="customselect">
+                    <h4>Type of marks:</h4>
+                    <input class="changeListMarks" value="circle" type="text" placeholder="Choose option" readonly>
+                    <ul class="listMarks">
+                        <li onmousedown="selectValue()">circle</li>
+                        <li onmousedown="selectValue()">disc</li>
+                        <li onmousedown="selectValue()">square</li>
+                        <li onmousedown="selectValue()">none</li>
+                    </ul>
+                </div>
+                <input type="button" class="buttonCreateList" value="Create list" onclick="createList()">
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

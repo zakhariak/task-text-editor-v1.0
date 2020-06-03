@@ -1,0 +1,468 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 990px;
+    margin: 0 auto;
+}
+
+/* стилі для фонових блоків............................................. */
+.top,
+.bottom,
+.second-step {
+    min-height: 300px;
+    border: 1px solid rgb(118, 119, 119);
+    background-color: rgb(234, 238, 239);
+    border-radius: 5px;
+    padding: 20px 30px;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* стилі для елементів у блоці стилі................................................... */
+.style-block h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* кастомний селект.................................................... */
+.customselect {
+    width: 100%;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+}
+
+.customselect h3 {
+    margin: 20px 0 5px 0;
+}
+
+.customselect input {
+    width: 360px;
+    height: 36px;
+    padding-left: 5px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.customselect::after {
+    content: '\25C4 \25BA ';
+    font-size: 6px;
+    position: absolute;
+    top: 50px;
+    left: 340px;
+    transform: rotate(90deg) scaleY(2);
+}
+
+.customselect input:focus~ul {
+    display: block;
+}
+
+.customselect ul {
+    width: 358px;
+    height: 82px;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid rgb(13, 134, 255);
+    z-index: 10;
+    position: absolute;
+    top: 70px;
+    left: 1px;
+    display: none;
+}
+
+.customselect li {
+    background-color: white;
+    font-size: 16px;
+    list-style: none;
+    padding: 1px 0 1px 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.customselect li:hover {
+    background-color: rgb(13, 134, 255);
+    z-index: 10;
+}
+
+/* клас який використовуємо для приховування елементів */
+.hidden {
+    display: none;
+}
+
+.area {
+    width: 100%;
+}
+
+/* задає стилі для всіх кнопок */
+button {
+    width: 50px;
+    height: 34px;
+    margin: 8px auto;
+    color: white;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ставить дві головні кнопки по центру */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* клас і дії на жовту кнопку */
+.yellowBtn {
+    color: black;
+    background-color: rgb(255, 189, 0);
+    border-color: rgb(227, 182, 71);
+    transition: 0.2s linear;
+}
+
+.yellowBtn:hover {
+    background-color: rgb(230, 164, 0);
+    border-color: rgb(199, 148, 11);
+}
+
+.yellowBtn:focus {
+    background-color: rgb(255, 189, 0);
+    border-color: rgb(255, 189, 0);
+    box-shadow: 0 0 0 3px rgb(255, 225, 144);
+    transition: 0.2s linear;
+}
+
+/* клас і дії на синю кнопку */
+.blueBtn {
+    color: white;
+    background-color: rgb(10, 150, 186);
+    border-color: rgb(38, 128, 148);
+    transition: 0.2s linear;
+}
+
+.blueBtn:hover {
+    background-color: rgb(8, 115, 142);
+    border-color: rgb(7, 95, 119);
+}
+
+.blueBtn:focus {
+    background-color: rgb(10, 150, 186);
+    border-color: rgb(38, 128, 148);
+    box-shadow: 0 0 0 3px rgb(142, 213, 231);
+    transition: 0.2s linear;
+}
+
+/* клас і дії на червону кнопку */
+.redBtn {
+    color: white;
+    background-color: rgb(232, 70, 66);
+    border-color: rgb(165, 88, 85);
+}
+
+.redBtn:hover {
+    background-color: rgb(190, 47, 44);
+    border-color: rgb(126, 30, 28);
+}
+
+/* клас і дії на зелену кнопку */
+.greenBtn,
+.buttonCreateTable,
+.buttonCreateList {
+    color: white;
+    background-color: rgb(31, 150, 65);
+    border-color: rgb(76, 135, 98);
+}
+
+.greenBtn:hover,
+.buttonCreateTable:hover,
+.buttonCreateList:hover {
+    background-color: rgb(25, 122, 52);
+    border-color: rgb(54, 102, 68);
+}
+
+/* клас і дії на сірих кнопках в стилях*/
+.grayBtn {
+    color: white;
+    background-color: rgb(106, 117, 123);
+    border-color: rgb(106, 117, 123);
+    transition: 0.2s linear;
+}
+
+.grayBtn:hover {
+    background-color: rgb(89, 98, 105);
+    border-color: rgb(75, 79, 82);
+}
+
+.grayBtn:focus {
+    background-color: rgb(106, 117, 123);
+    border-color: rgb(106, 117, 123);
+    box-shadow: 0 0 0 3px rgb(160, 162, 163);
+    transition: 0.2s linear;
+}
+
+.textColor {
+    width: 104px;
+    margin: 0;
+}
+
+.backColor {
+    width: 140px;
+    margin: 0;
+}
+
+.colors {
+    width: 210px;
+    height: 210px;
+    outline: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50px;
+    right: 150px;
+}
+
+.color-box {
+    width: 70px;
+    height: 70px;
+    flex-wrap: 1px;
+}
+
+/* кастомне радіо задане глобально................................................................. */
+input[type="radio"] {
+    display: none;
+}
+
+.radio-wrapper {
+    position: relative;
+    display: flex;
+    width: 80px;
+    height: 20px;
+}
+
+.radioMark {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+input[type="radio"]:checked~.radioMark {
+    background-color: rgb(13, 134, 255);
+}
+
+.radioMark::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.radio-wrapper h4 {
+    padding-left: 5px;
+    width: 45px;
+    margin: 0;
+    font-weight: normal;
+    position: relative;
+    top: -2px;
+    left: 13px;
+}
+
+/* стилі для чекбоксів ..........................................*/
+input[type="checkbox"] {
+    display: none;
+    position: relative;
+}
+
+.checkboxs,
+.form-create,
+.form-size div {
+    display: flex;
+}
+
+.checkbox-wrapper {
+    width: 100px;
+    position: relative;
+}
+
+.checkbox {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+input[type="checkbox"]:checked~.checkbox {
+    background-color: #0d98d9;
+    box-shadow: 0 0 0 3px lightblue;
+}
+
+.checkbox::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 5.5px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(40deg);
+}
+
+.checkbox-wrapper h3 {
+    padding-left: 10px;
+    width: 400px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+    top: -3px;
+    left: 10px;
+}
+
+/* стилі для інпутів в блоці для створення таблиці....................................... */
+.second-step {
+    width: 970px;
+}
+
+.second-step h1 {
+    margin: 0 0 10px 0;
+}
+
+.SecondStepTopBlock h3::after {
+    content: '\21B4';
+    width: 20px;
+    height: 22px;
+    position: absolute;
+    left: 46px;
+}
+
+.SecondStepTopBlock h3 {
+    margin: 0 20px 0 0;
+    position: relative;
+}
+
+.SecondStepTopBlock label {
+    height: 22px;
+    cursor: pointer;
+}
+
+/* розміщення інпутів в блоці створення таблиці....................................... */
+.create-table-tr,
+.create-table-td,
+.table-width-td,
+.table-height-td,
+.table-border-set,
+.table-border-width,
+.table-border-type,
+.table-border-color,
+.create-list-count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* розміщення елементів у верхньому блоці на другій сторінці....................................... */
+.SecondStepTopBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* стилі для інпутів в блоці таблиці///////////////////////////////////// */
+.table-box input,
+.list-box input {
+    width: 84%;
+    height: 36px;
+    padding-left: 5px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.table-box input:focus,
+.list-box input:focus {
+    box-shadow: 0 0 0.1em 3px lightblue;
+}
+
+.table-border-set input {
+    width: 130px;
+    margin-left: 14px;
+}
+
+.table-box h4,
+.list-box h4 {
+    margin: 0;
+    width: 130px;
+    font-weight: normal;
+}
+
+.table-box .customselect {
+    width: 274px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.table-box .customselect::after {
+    top: 15px;
+    left: 255px;
+}
+
+.table-box .customselect ul,
+.list-box .customselect ul {
+    width: 125px;
+    top: 35px;
+    left: 147px;
+}
+
+.table-box .buttonCreateTable {
+    width: 130px;
+    cursor: pointer;
+}
+
+/* стилі для елементів у блоці список....................................... */
+.list-box .customselect {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.list-box .customselect::after {
+    top: 15px;
+    left: 885px;
+}
+
+.list-box .customselect ul {
+    width: 760px;
+}
+
+.list-box .buttonCreateList {
+    width: 130px;
+    cursor: pointer;
+}
